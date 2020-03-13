@@ -1,0 +1,84 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+h1 {
+    margin-left: 150px;
+}
+
+.page {
+    width: 100%;
+}
+
+.TableCont {
+    padding-top: 20px;
+    display: block;
+    border-collapse: separate;
+    border: 1px solid #48185B;
+    border-radius: 5px;
+    width: 80%;
+    margin: 20px auto 0;
+    padding: 0 20px;
+    background: #FFF;
+    margin-left: 150px;
+}
+
+.TableCont Input {
+    margin-top: 40px;
+    width: 150px;
+    height: 20px;
+    font-family: 'Dosis';
+    background: #fff;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #48185B;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 8px;
+}
+
+.TableCont Table {
+    margin-top: 20px;
+    width: 100%;
+    background: #fff;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #48185B;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+.TableCont Table th{
+    background: #7A4A8C;
+    font-size: 14px;
+    color: #FFF;
+    margin-top: 5px;
+    line-height: 24px;
+    text-align: left;
+}
+
+.sidenav {
+    text-align: center;
+    height: 100%;
+    width: 5%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #48185B;
+    overflow-x: hidden;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Icon {
+    padding: 0px;
+    font-size: 18px;
+    color: #FFF;
+  }
