@@ -14,36 +14,20 @@ import { Table, Tr } from 'styled-table-component';
 export default class Main extends Component {
     state = {
         produtos: [],
-        productInfo: {},
         page: 1,
     }
 
-    constructor() {
-        super();
-        this.state = {
-            prod: []
-        }
-    }
 
     componentDidMount() {
         this.loadProducts();
-
-        request.get('https://localhost:44343/api/produto')
-            .end( (err, res) => {
-                console.log(res);
-                const prods = (JSON.parse(res.text)).prods;
-                this.setState({
-                    prod: prods
-                });
-            })
     }
 
     loadProducts = async (page = 1) => {
         const response = await api.get('/produto');
-
+        console.log({response})
         const { docs, ...productInfo } = response.data;
 
-        this.setState({ produtos: response.data.docs });
+        this.setState({ produtos: response.data });
 
         console.log(response.data.docs);
     }
@@ -117,10 +101,16 @@ export default class Main extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>{ this.state.prod }</td>
+                            {
+                                this.state.produtos.map((produto) => (
+                                    <tr>
+                                    <td>{ produto.codigo }</td>
+                                    <td>{ produto.nome }</td>
+                                    <td>{ Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(produto.valor) }</td>
                                     <td><TrashIcon /></td>
                                 </tr>
+                                ))
+                            }
                             </tbody>
                             <tfoot>
                                 <tr>
