@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import render from 'react-dom';
 import api from '../../services/api';
+import App from './../../App';
 import request from 'superagent';
 import './styles.css';
-import { columns } from "./definitions";
 import { Link, BrowserRouter } from "react-router-dom";
 import styled from 'styled-components';
 import { ListAlt } from '@styled-icons/fa-regular/ListAlt';
@@ -80,9 +80,7 @@ export default class Main extends Component {
                             <ListIcon className="Icon" />
                         </Link>
                         <br />
-                        <br />
-                        <br />
-                        <Link to='/new-product'>
+                        <Link to='/novo-produto'>
                             <UploadIcon className="Icon" />
                         </Link>
                     </BrowserRouter>
@@ -91,13 +89,13 @@ export default class Main extends Component {
                     <h1>Lista de Produtos</h1>
                     <div className="TableCont">
                         <Input placeholder="Buscar por palavra-chave" />
-                        <Table>
+                        <Table className="table table-striped">
                             <thead>
                                 <tr>
                                     <th>Código</th>
                                     <th>Nome</th>
                                     <th>Valor</th>
-                                    <th colspan="2">Valor</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -125,6 +123,6 @@ export default class Main extends Component {
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
